@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.clip__section {
+  padding: 100px 0;
+  text-align: center;
+  background-color: tomato;
+}
+.clip__container {
+  position: relative;
+  margin: 0 auto;
+  height: 500px;
+  width: 1200px;
+
+  background-color: teal;
+}
+.clip__item {
+  position: absolute;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.spring {
+  background-image: url(../images/spring.jpg);
+  z-index: 4;
+  clip-path: polygon(0 100%, 0 0, 0 0, 50% 50%);
+  transition: 2050ms;
+
+  filter: grayscale(1);
+}
+.summer {
+  background-image: url(../images/summer.jpg);
+  z-index: 3;
+  clip-path: polygon(0 100%, 0 0, 100% 0, 50% 50%);
+  transition: 2050ms;
+
+  filter: grayscale(1);
+}
+.autumn {
+  background-image: url(../images/autumn.jpg);
+  z-index: 1;
+  transition: 2050ms;
+  clip-path: polygon(0 100%, 50% 50%, 100% 0, 100% 100%);
+}
+.winter {
+  background-image: url(../images/winter.jpeg);
+  z-index: 2;
+  clip-path: polygon(0 100%, 0 0, 50% 50%, 100% 100%);
+
+  transition: 2050ms;
+}
+
+.spring:hover,
+.summer:hover {
+  filter: grayscale(0);
+}
+
+.spring:hover,
+.summer:hover,
+.autumn:hover,
+.winter:hover {
+  clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 100%);
+  z-index: 5;
+}
